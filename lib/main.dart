@@ -9,33 +9,53 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
+      title: 'Flutter Botones',
       theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Veronica Ruiz 0550',
+              style: TextStyle(color: Colors.white)),
+          backgroundColor: Colors.red,
+        ),
+        body: Container(
+          alignment: Alignment.center,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {},
+                style: ButtonStyle(
+                    overlayColor: MaterialStateProperty.all<Color>(
+                        const Color(0xffe8a4a4))),
+                icon: const Icon(Icons.home),
+                label: const Text('Elevated Button',
+                    style: TextStyle(fontSize: 25)),
+              ),
+              const SizedBox(height: 30),
+              OutlinedButton.icon(
+                onPressed: () {},
+                style: ButtonStyle(
+                    overlayColor: MaterialStateProperty.all<Color>(
+                        const Color(0xffe8a4a4))),
+                icon: const Icon(Icons.favorite),
+                label: const Text('Outlined Button',
+                    style: TextStyle(fontSize: 25)),
+              ),
+              const SizedBox(height: 30),
+              TextButton.icon(
+                onPressed: () {},
+                style: ButtonStyle(
+                    overlayColor:
+                        MaterialStateProperty.all(const Color(0xffe8a4a4))),
+                icon: const Icon(Icons.calendar_month_rounded),
+                label:
+                    const Text('Text Button', style: TextStyle(fontSize: 25)),
+              ),
+            ],
+          ),
         ),
       ),
     );
